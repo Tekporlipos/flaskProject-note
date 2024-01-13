@@ -1,38 +1,58 @@
 from src.utils.responseEntity import error_response, success_response
 
 
-class TrunkService:
+class NoteService:
     _instance = None
 
     def __new__(cls):
         if cls._instance is None:
-            cls._instance = super(TrunkService, cls).__new__(cls)
+            cls._instance = super(NoteService, cls).__new__(cls)
         return cls._instance
 
-    def create(self, db, notes_model, data, logger=None):
+    def create(self, db, notes, data, logger=None):
         title = data.get('title')
         body = data.get('body')
-        note = db.session.query(notes_model).filter_by(title=title).first()
-
+        note = db.session.query(notes).filter_by(title=title).first()
         if note:
             return error_response('Note with title ' + title + ' found. You are not allowed to create duplicate notes.',
                                   logger=logger, logger_type="warning")
 
-        new_note = notes_model(body=body, title=title)
+        new_note = notes(body=body, title=title)
         db.session.add(new_note)
-
         try:
             db.session.commit()
-            return success_response("Note created successfully", new_note,
+            serialized_note = {
+                'id': str(new_note.id),
+                'title': new_note.title,
+                'body': new_note.body,
+                'created_at': new_note.created_at.isoformat(),
+                'updated_at': new_note.updated_at.isoformat()
+            }
+            return success_response("Note created successfully", serialized_note,
                                     status_code=201, logger=logger, logger_type="info")
         except Exception as e:
             db.session.rollback()
             return error_response(str(e), logger=logger, logger_type="error")
 
-    def get_notes(self, db, notes_model, logger=None):
+    def get_notes(self, db, notes_model, page=1, page_size=10, logger=None):
         try:
-            notes_data = db.session.query(notes_model).all()
-            return success_response('Notes retrieved successfully', logger=logger, logger_type="info", data=notes_data)
+            offset = (page - 1) * page_size
+
+            paginated_notes = db.session.query(notes_model).offset(offset).limit(page_size).all()
+
+            serialized_notes = [
+                {
+                    'id': str(note.id),
+                    'title': note.title,
+                    'body': note.body,
+                    'created_at': note.created_at.isoformat(),
+                    'updated_at': note.updated_at.isoformat()
+                }
+                for note in paginated_notes
+            ]
+
+            return success_response('Notes retrieved successfully', logger=logger, logger_type="info",
+                                    data={'page': page, 'page_size': page_size, 'notes': serialized_notes})
         except Exception as e:
             return error_response(str(e), logger=logger, logger_type="error")
 
@@ -41,7 +61,14 @@ class TrunkService:
             note = db.session.query(notes_model).get_or_404(note_id)
             if not note:
                 return error_response("Note not found", logger=logger, logger_type="warning")
-            return success_response("Note retrieved successfully", note, logger=logger, logger_type="info")
+            serialized_note = {
+                'id': str(note.id),
+                'title': note.title,
+                'body': note.body,
+                'created_at': note.created_at.isoformat(),
+                'updated_at': note.updated_at.isoformat()
+            }
+            return success_response("Note retrieved successfully", serialized_note, logger=logger, logger_type="info")
         except Exception as e:
             return error_response(str(e), logger=logger, logger_type="error")
 
@@ -55,12 +82,17 @@ class TrunkService:
 
         if not note:
             return error_response("Note not found", logger=logger, logger_type="warning")
-
         note.body = body
-
         try:
             db.session.commit()
-            return success_response("Note updated successfully", note,
+            serialized_note = {
+                'id': str(note.id),
+                'title': note.title,
+                'body': note.body,
+                'created_at': note.created_at.isoformat(),
+                'updated_at': note.updated_at.isoformat()
+            }
+            return success_response("Note updated successfully", serialized_note,
                                     status_code=200, logger=logger, logger_type="info")
         except Exception as e:
             db.session.rollback()
@@ -79,4 +111,3 @@ class TrunkService:
         except Exception as e:
             db.session.rollback()
             return error_response(str(e), logger=logger, logger_type="error")
-

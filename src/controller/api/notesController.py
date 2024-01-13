@@ -2,30 +2,34 @@ from flask import request
 
 from app import app, db
 from src.models.NoteModel import Notes
-from src.services.NoteService import TrunkService
+from src.services.NoteService import NoteService
 from src.utils.httpMethod import HttpMethod
 
-trunkService = TrunkService()
+noteService = NoteService()
 
 
-@app.route('/api/v1/create', methods=[HttpMethod.POST])
+@app.route('/api/v1/note', methods=[HttpMethod.POST])
 def create():
-    return trunkService.create(db, Notes, request.json, app.logger)
+    return noteService.create(db, Notes, request.json, app.logger)
 
 
-@app.route('/api/v1/notes', methods=[HttpMethod.GET])
+@app.route('/api/v1/note', methods=[HttpMethod.GET])
 def get_notes():
-    return trunkService.get_notes(db, Notes, app.logger)
+    page = int(request.args.get('page', 1))
+    page_size = int(request.args.get('page_size', 10))
+    return noteService.get_notes(db, Notes, page=page, page_size=page_size, logger=app.logger)
 
-@app.route('/api/v1/notes/<note_id>', methods=[HttpMethod.GET])
+
+@app.route('/api/v1/note/<note_id>', methods=[HttpMethod.GET])
 def get_notes_by_id(note_id):
-    return trunkService.get_notes(db, Notes,note_id, app.logger)
+    return noteService.get_notes_by_id(db, Notes, note_id, app.logger)
 
-@app.route('/api/v1/notes/<note_id>', methods=[HttpMethod.PATCH])
+
+@app.route('/api/v1/note/<note_id>', methods=[HttpMethod.PATCH])
 def update_notes_by_id(note_id):
-    return trunkService.update_notes_by_id(db, Notes, note_id, request.json, app.logger)
+    return noteService.update_notes_by_id(db, Notes, note_id, request.json, app.logger)
 
 
-@app.route('/api/v1/notes/<note_id>', methods=[HttpMethod.DELETE])
+@app.route('/api/v1/note/<note_id>', methods=[HttpMethod.DELETE])
 def delete_notes_by_id(note_id):
-    return trunkService.delete_notes_by_id(db, Notes, note_id, app.logger)
+    return noteService.delete_notes_by_id(db, Notes, note_id, app.logger)

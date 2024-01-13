@@ -1,1 +1,27 @@
 2024-01-13 21:44:51,234 [INFO] Service Available 200
+2024-01-13 23:28:01,783 [INFO] Note created successfully 201
+2024-01-13 23:29:20,775 [WARNING] Note with title text 1 found. You are not allowed to create duplicate notes. 404
+2024-01-13 23:31:03,703 [WARNING] Note with title text 1 found. You are not allowed to create duplicate notes. 404
+2024-01-13 23:31:31,789 [INFO] Note created successfully 201
+2024-01-13 23:32:36,582 [WARNING] Note with title text 1 found. You are not allowed to create duplicate notes. 404
+2024-01-13 23:32:52,827 [INFO] Note created successfully 201
+2024-01-13 23:34:02,787 [INFO] Note created successfully 201
+2024-01-13 23:34:47,435 [INFO] Note created successfully 201
+2024-01-13 23:36:36,119 [WARNING] Note with title text 4 found. You are not allowed to create duplicate notes. 404
+2024-01-13 23:36:41,088 [INFO] Note created successfully 201
+2024-01-13 23:37:15,866 [WARNING] Note with title text 5 found. You are not allowed to create duplicate notes. 404
+2024-01-13 23:37:21,137 [INFO] Note created successfully 201
+2024-01-13 23:39:43,849 [INFO] Note created successfully 201
+2024-01-13 23:40:56,153 [WARNING] Note with title text 7 found. You are not allowed to create duplicate notes. 404
+2024-01-13 23:41:12,830 [INFO] Note created successfully 201
+2024-01-13 23:41:33,534 [INFO] Notes retrieved successfully 200
+2024-01-13 23:42:33,966 [INFO] Notes retrieved successfully 200
+2024-01-13 23:46:43,566 [INFO] Notes retrieved successfully 200
+2024-01-13 23:47:35,961 [ERROR] unhashable type: 'list' 404
+2024-01-13 23:48:33,163 [INFO] Notes retrieved successfully 200
+2024-01-13 23:50:47,693 [INFO] Note retrieved successfully 200
+2024-01-13 23:51:49,105 [INFO] Note retrieved successfully 200
+2024-01-13 23:53:41,368 [INFO] Note updated successfully 200
+2024-01-13 23:54:02,921 [INFO] Note updated successfully 200
+2024-01-13 23:55:06,164 [INFO] Note deleted successfully 200
+2024-01-13 23:55:09,652 [ERROR] 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again. 404
