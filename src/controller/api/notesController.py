@@ -14,9 +14,12 @@ def create():
 
 
 @app.route('/api/v1/notes', methods=[HttpMethod.GET])
-def get_notes_by_id():
-    return trunkService.get_notes_by_id(db, Notes, app.logger)
+def get_notes():
+    return trunkService.get_notes(db, Notes, app.logger)
 
+@app.route('/api/v1/notes/<note_id>', methods=[HttpMethod.GET])
+def get_notes_by_id(note_id):
+    return trunkService.get_notes(db, Notes,note_id, app.logger)
 
 @app.route('/api/v1/notes/<note_id>', methods=[HttpMethod.PATCH])
 def update_notes_by_id(note_id):
@@ -25,4 +28,4 @@ def update_notes_by_id(note_id):
 
 @app.route('/api/v1/notes/<note_id>', methods=[HttpMethod.DELETE])
 def delete_notes_by_id(note_id):
-    return trunkService.register_truck(db, Notes, note_id, app.logger)
+    return trunkService.delete_notes_by_id(db, Notes, note_id, app.logger)
