@@ -5,49 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f94fac2-b2f0-401e-a43e-26e7509f0529" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/flaskProject-note.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/dbconfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migration/Base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migration/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/web.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/api/billController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/api/healthController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/api/notesController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/api/rateController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/api/userController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/web/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/web/homeController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/NoteModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/RatesModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/UserModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/billService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/healthService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ratesService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/trunkService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/userService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/httpMethod.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/responseEntity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/NoteModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/NoteModel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705175940700</updated>
-      <workItem from="1705175945277" duration="5168000" />
+      <workItem from="1705175945277" duration="5875000" />
     </task>
     <servers />
   </component>

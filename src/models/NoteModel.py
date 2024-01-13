@@ -7,9 +7,7 @@ from app import db
 
 class Notes(db.Model):
     id = db.Column(db.String(36), primary_key=True, default=str(uuid.uuid4()))
-    user_id = db.Column(db.String(36), db.ForeignKey('user.id'), nullable=False)
-    user = relationship('User', backref='notes')
-    title = db.Column(db.String(50), unique=True, nullable=False)
+    title = db.Column(db.String(50), nullable=False, unique=True)
     body = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     updated_at = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())

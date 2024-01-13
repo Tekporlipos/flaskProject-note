@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_jwt_extended import JWTManager
 
 from instance.dbconfig import DbConfig
 from migration.Base import db
@@ -11,14 +10,10 @@ app = Flask(__name__)
 app.config.from_object(DbConfig)
 db.init_app(app)
 setup_logging(app)
-jwt = JWTManager(app)
 import routes.api
-import routes.web
 
 
 with app.app_context():
-    import src.models.UserModel
-    import src.models.RatesModel
     import src.models.NoteModel
     db.create_all()
 

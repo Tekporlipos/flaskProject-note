@@ -10,12 +10,12 @@ class TrunkService:
             cls._instance = super(TrunkService, cls).__new__(cls)
         return cls._instance
 
-    def register_truck(self, db, provider, trucks, data, logger=None):
+    def create(self, db, notes, data, logger=None):
         try:
-            provider = db.get_or_404(provider, data.get("provider"))
-            if not provider:
+            notes = db.get_or_404(notes, data.get("provider"))
+            if not notes:
                 return error_response('Provider not found', logger=logger, logger_type="warning")
-            truck = trucks(id=data.get("id"), provider_id=provider.id)
+            truck = trucks(id=data.get("id"), provider_id=notes.id)
             db.session.add(truck)
             truck_data = db.session.commit()
             return success_response("Truck registered successfully", truck_data,
@@ -24,7 +24,7 @@ class TrunkService:
             db.session.rollback()
             return error_response(str(e), logger=logger, logger_type="error")
 
-    def update_truck(self, db, trucks, provider, truck_id, data, logger=None):
+    def get_notes_by_id(self, db, notes, logger=None):
         try:
             truck_data = db.get_or_404(trucks, truck_id)
             if not truck_data:
@@ -39,9 +39,9 @@ class TrunkService:
             db.session.rollback()
             return error_response(str(e), logger=logger, logger_type="error")
 
-    def get_truck_details(self, requests, db, trucks, truck_id, t1_str, t2_str, logger=None):
+    def update_notes_by_id(self, db, note, note_id, logger=None):
         try:
-            truck = db.get_or_404(trucks, truck_id)
+            truck = db.get_or_404(note_id, truck_id)
             if not truck:
                 return error_response("Truck not found", logger=logger, logger_type="warning")
             response = requests.get(get_url('item/' + str(truck_id), t1_str, t2_str))
