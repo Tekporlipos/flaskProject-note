@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4f94fac2-b2f0-401e-a43e-26e7509f0529" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/api/notesController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/api/notesController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/NoteModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/NoteModel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/NoteService.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/NoteService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/log/notes.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/log/notes.log" afterDir="false" />
     </list>
@@ -26,30 +26,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2aukda6xx9X3apQahYGRfKcdhLJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flask server.Flask (app.py).executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/tekporlipos/Documents/Development/Tutorials/python/note-app/flaskProject-note",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask server.Flask (app.py).executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tekporlipos/Documents/Development/Tutorials/python/note-app/flaskProject-note&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -109,7 +109,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705175940700</updated>
-      <workItem from="1705175945277" duration="10060000" />
+      <workItem from="1705175945277" duration="11448000" />
+      <workItem from="1705241677759" duration="1327000" />
+      <workItem from="1705248433376" duration="1285000" />
     </task>
     <servers />
   </component>

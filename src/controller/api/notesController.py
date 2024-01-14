@@ -15,9 +15,7 @@ def create():
 
 @app.route('/api/v1/note', methods=[HttpMethod.GET])
 def get_notes():
-    page = int(request.args.get('page', 1))
-    page_size = int(request.args.get('page_size', 10))
-    return noteService.get_notes(db, Notes, page=page, page_size=page_size, logger=app.logger)
+    return noteService.get_notes(db, Notes, logger=app.logger)
 
 
 @app.route('/api/v1/note/<note_id>', methods=[HttpMethod.GET])

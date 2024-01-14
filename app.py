@@ -4,12 +4,15 @@ from instance.dbconfig import DbConfig
 from migration.Base import db
 from dotenv import load_dotenv
 from instance.logger import setup_logging
+from flask_cors import CORS
 
 load_dotenv()
 app = Flask(__name__)
 app.config.from_object(DbConfig)
 db.init_app(app)
 setup_logging(app)
+CORS(app)
+
 import routes.api
 
 

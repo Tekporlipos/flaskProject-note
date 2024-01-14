@@ -34,11 +34,10 @@ class NoteService:
             db.session.rollback()
             return error_response(str(e), logger=logger, logger_type="error")
 
-    def get_notes(self, db, notes_model, page=1, page_size=10, logger=None):
+    def get_notes(self, db, notes_model, logger=None):
         try:
-            offset = (page - 1) * page_size
 
-            paginated_notes = db.session.query(notes_model).offset(offset).limit(page_size).all()
+            notes_data = db.session.query(notes_model).all()
 
             serialized_notes = [
                 {
@@ -48,11 +47,11 @@ class NoteService:
                     'created_at': note.created_at.isoformat(),
                     'updated_at': note.updated_at.isoformat()
                 }
-                for note in paginated_notes
+                for note in notes_data
             ]
 
             return success_response('Notes retrieved successfully', logger=logger, logger_type="info",
-                                    data={'page': page, 'page_size': page_size, 'notes': serialized_notes})
+                                    data={'notes': serialized_notes})
         except Exception as e:
             return error_response(str(e), logger=logger, logger_type="error")
 
